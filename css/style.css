@@ -3,17 +3,30 @@
     margin: 0;
 }
 
+html { 
+    background: url("https://i.pinimg.com/originals/1e/8d/29/1e8d29a7fd17fbd8e23ad712a7e79ddc.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
 body {
     font-family: "Merriweather Sans", sans-serif;
-    color: #4c6986;
+    /*color: #4c6986;*/
+    color: white;
+}
+
+.title {
+    max-width: 500px;
 }
 
 .wrapper {
-    max-width: 1440px;
-    height: 400px;
+    max-width: 80%;
+    height: 600px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: 0 auto;
 }
 
@@ -43,7 +56,7 @@ h1 {
 
 .game {
     width: 500px;
-    height: 250px;
+    height: 500px;
     display: flex;
     flex-direction: column;
 }
@@ -54,16 +67,26 @@ h1 {
     font-size: 24px;
 }
 
-.header .player-x {
+.header .player-X {
     flex: 1;
     border-bottom: 5px solid #eee;
     padding-bottom: 8px;
 }
 
-.header .player-o {
+.player-X.active {
+    color: #42BED7;
+    border-color: #42BED7;
+}
+
+.header .player-O {
     flex: 1;
     border-bottom: 5px solid #eee;
     padding-bottom: 8px
+}
+
+.player-O.active {
+    color: #D7BAFB;
+    border-color: #D7BAFB;
 }
 
 .board {
@@ -91,6 +114,28 @@ h1 {
     border-bottom: 3px solid rgba(137, 163, 189, 0.58);
 }
 
-.board-tile:hover {
+/*.board-tile:hover {
     background: #eeeeee;
+}*/
+
+.tile-x {
+    color: #42BED7;
+}
+
+.tile-o {
+    color: #D7BAFB;
+}
+
+.tile-winner span{
+    color: #23CE6B;
+}
+
+@media only screen and (max-width: 1200px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .left {
+        margin-bottom: 50px;
+    }
 }
